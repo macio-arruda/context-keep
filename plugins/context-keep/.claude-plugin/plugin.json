@@ -1,0 +1,20 @@
+{
+  "name": "context-keep",
+  "description": "Keep context files lean. Audit CLAUDE.md, AGENTS.md and state files for size, token cost and lifecycle mixing, then guard the size with a pre-commit cap so bloat does not grow back.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Mácio Arruda",
+    "url": "https://github.com/macio-arruda"
+  },
+  "homepage": "https://github.com/macio-arruda/context-keep",
+  "repository": "https://github.com/macio-arruda/context-keep",
+  "license": "MIT",
+  "keywords": [
+    "context-engineering",
+    "context-window",
+    "token-cost",
+    "pre-commit",
+    "lifecycle",
+    "knowledge-management"
+  ]
+}

@@ -1,0 +1,15 @@
+# Your own context lives in your project, not in a fork of this one.
+context/
+
+# Source material should not collect here.
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+
+# System
+.DS_Store
+.DS_Store?
+._*
+__pycache__/
+*.pyc

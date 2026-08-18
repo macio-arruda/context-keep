@@ -1,0 +1,40 @@
+#!/bin/sh
+# context-keep guard: stop context files from growing back.
+# Warn at the soft cap, block at the hard cap. Emergency escape: git commit --no-verify.
+#
+# Install: copy to .git/hooks/pre-commit and make it executable, or point
+#   core.hooksPath at a directory that holds it.
+#
+# Configure caps below, one line per guarded file: path:soft_kb:hard_kb
+
+GUARDED='
+CLAUDE.md:25:40
+AGENTS.md:25:40
+context/STATE.md:10:20
+'
+
+staged=$(git diff --cached --name-only)
+[ -z "$staged" ] && exit 0
+
+yellow='\033[33m'; red='\033[31m'; reset='\033[0m'
+block=0
+
+for entry in $GUARDED; do
+  file=$(echo "$entry" | cut -d: -f1)
+  soft=$(echo "$entry" | cut -d: -f2)
+  hard=$(echo "$entry" | cut -d: -f3)
+  echo "$staged" | grep -qx "$file" || continue
+  [ -f "$file" ] || continue
+  bytes=$(wc -c < "$file" | tr -d ' ')
+  kb=$((bytes / 1024))
+  if [ "$kb" -ge "$hard" ]; then
+    printf "${red}x  %s is %s KB (hard cap %s KB).${reset}\n" "$file" "$kb" "$hard" 1>&2
+    printf "   Split it by lifecycle (state / rationale / trail) or archive the cold part.\n" 1>&2
+    block=1
+  elif [ "$kb" -ge "$soft" ]; then
+    printf "${yellow}!  %s is %s KB (near the %s KB cap).${reset}\n" "$file" "$kb" "$hard" 1>&2
+  fi
+done
+
+[ "$block" -eq 1 ] && printf "   Commit blocked. Emergency: git commit --no-verify\n" 1>&2
+exit $block

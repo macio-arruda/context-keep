@@ -1,0 +1,31 @@
+{
+  "name": "context-engineering",
+  "description": "Tools for deciding what an AI knows, where it came from, and what never leaves.",
+  "owner": {
+    "name": "Mácio Arruda",
+    "url": "https://github.com/macio-arruda"
+  },
+  "plugins": [
+    {
+      "name": "context-keep",
+      "displayName": "Context Keep",
+      "source": "./plugins/context-keep",
+      "description": "Keep context files lean. Audit CLAUDE.md, AGENTS.md and state files for size, token cost and lifecycle mixing, then guard the size with a pre-commit cap so bloat does not grow back.",
+      "author": {
+        "name": "Mácio Arruda"
+      },
+      "homepage": "https://github.com/macio-arruda/context-keep",
+      "repository": "https://github.com/macio-arruda/context-keep",
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": [
+        "context-engineering",
+        "context-window",
+        "token-cost",
+        "pre-commit",
+        "lifecycle",
+        "knowledge-management"
+      ]
+    }
+  ]
+}
