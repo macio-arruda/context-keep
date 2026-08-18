@@ -8,7 +8,7 @@ Isso custa duas vezes.
 
 Primeiro, token. O arquivo inteiro entra no contexto a cada chamada, então você paga input por conteúdo velho toda vez. Um changelog que chegou a 140 KB dá uns 35 mil tokens relidos a cada commit, o que a um preço de US$ 5 / 1M de input sai a uns 17 centavos por commit pra reler algo que ninguém lê.
 
-Segundo, atenção. Quanto maior o contexto, pior o modelo usa o meio dele. O estudo de Stanford que nomeou isso ("Lost in the Middle", Liu et al., 2023) achou a precisão mais alta no começo e no fim do contexto e mais baixa no meio. A medição da Chroma depois ("context rot") mostrou a qualidade caindo conforme o input cresce, nos modelos atuais. Arquivo de contexto inchado é contexto longo, então piora a resposta enquanto sobe a conta.
+Segundo, atenção. Quanto maior o contexto, pior o modelo usa o meio dele. O estudo que nomeou isso ("Lost in the Middle", Liu et al., 2023) achou a precisão mais alta no começo e no fim do contexto e mais baixa no meio. A medição da Chroma depois ("context rot") mostrou a qualidade caindo conforme o input cresce, nos modelos atuais. Arquivo de contexto inchado é contexto longo, então piora a resposta enquanto sobe a conta.
 
 ## Por que os arquivos apodrecem
 

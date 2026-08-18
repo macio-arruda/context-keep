@@ -145,6 +145,7 @@ def main(argv):
         print("projected over {} reads: ${:.2f}".format(args.reads, total_reads_cost))
 
     if args.strict and over_hard:
+        sys.stdout.flush()
         print("\n{} file(s) over the hard cap. Split by lifecycle or archive the cold parts.".format(over_hard), file=sys.stderr)
         return 1
     return 0

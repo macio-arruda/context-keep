@@ -32,7 +32,7 @@ for entry in $GUARDED; do
     printf "   Split it by lifecycle (state / rationale / trail) or archive the cold part.\n" 1>&2
     block=1
   elif [ "$kb" -ge "$soft" ]; then
-    printf "${yellow}!  %s is %s KB (near the %s KB cap).${reset}\n" "$file" "$kb" "$hard" 1>&2
+    printf "${yellow}!  %s is %s KB (soft cap %s, hard cap %s).${reset}\n" "$file" "$kb" "$soft" "$hard" 1>&2
   fi
 done
 

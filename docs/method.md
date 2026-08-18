@@ -8,7 +8,7 @@ That costs you twice.
 
 First, tokens. The whole file enters the context on every call, so you pay input tokens for old content on every read. A changelog that grew to 140 KB is roughly 35,000 tokens reread on every commit, which at a $5 / 1M input price is about 17 cents per commit to reread something nobody reads.
 
-Second, attention. As the context grows, the model uses the middle of it worse. The Stanford study that named this ("Lost in the Middle", Liu et al., 2023) found accuracy highest at the start and end of a long context and lowest in the middle. Chroma's later measurement ("context rot") showed quality degrading as input length grows across current models. A bloated context file is long context, so it degrades the answer while it raises the bill.
+Second, attention. As the context grows, the model uses the middle of it worse. The study that named this ("Lost in the Middle", Liu et al., 2023) found accuracy highest at the start and end of a long context and lowest in the middle. Chroma's later measurement ("context rot") showed quality degrading as input length grows across current models. A bloated context file is long context, so it degrades the answer while it raises the bill.
 
 ## Why files rot
 
