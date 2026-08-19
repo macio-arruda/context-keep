@@ -10,7 +10,7 @@ Primeiro, token. O arquivo inteiro entra no contexto a cada chamada, então voc�
 
 Segundo, atenção. Quanto maior o contexto, pior o modelo usa o meio dele. O estudo que nomeou isso ("Lost in the Middle", Liu et al., 2023) achou a precisão mais alta no começo e no fim do contexto e mais baixa no meio. A medição da Chroma depois ("context rot") mostrou a qualidade caindo conforme o input cresce, nos modelos atuais. Arquivo de contexto inchado é contexto longo, então piora a resposta enquanto sobe a conta.
 
-## Por que os arquivos apodrecem
+## Por que os arquivos se degradam
 
 Em sistemas você não guarda dado frio no caminho quente. A RAM segura o working set; o arquivo morto fica no disco. Arquivo de contexto quebra essa regra. Ele guarda três coisas de ritmos opostos no mesmo lugar:
 
